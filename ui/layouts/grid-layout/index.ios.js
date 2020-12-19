@@ -301,7 +301,8 @@ class MeasureHelper {
         }
     }
     addMeasureSpec(measureSpec) {
-        // Get column stats
+        try {
+            // Get column stats
         let size = measureSpec.getColumnIndex() + measureSpec.getColumnSpan();
         for (let i = measureSpec.getColumnIndex(); i < size; i++) {
             let columnGroup = this.columns[i];
@@ -349,6 +350,8 @@ class MeasureHelper {
         }
         this.columns[measureSpec.getColumnIndex()].children.push(measureSpec);
         this.rows[measureSpec.getRowIndex()].children.push(measureSpec);
+        } catch(ex) {
+        }
     }
     clearMeasureSpecs() {
         for (let i = 0, size = this.columns.length; i < size; i++) {
