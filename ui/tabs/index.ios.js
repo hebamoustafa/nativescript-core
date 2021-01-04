@@ -58,7 +58,11 @@ var MDCTabBarDelegateImpl = /** @class */ (function (_super) {
         var selectedIndex = tabBarItems.indexOf(selectedItem);
         owner.selectedIndex = selectedIndex;
     };
-    MDCTabBarDelegateImpl.ObjCProtocols = [MDCTabBarDelegate];
+    try {
+        MDCTabBarDelegateImpl.ObjCProtocols = [MDCTabBarDelegate];
+    } catch(ex) {
+
+    }
     return MDCTabBarDelegateImpl;
 }(NSObject));
 var BackgroundIndicatorTemplate = /** @class */ (function (_super) {
@@ -71,7 +75,11 @@ var BackgroundIndicatorTemplate = /** @class */ (function (_super) {
         attributes.path = UIBezierPath.bezierPathWithRect(context.bounds);
         return attributes;
     };
-    BackgroundIndicatorTemplate.ObjCProtocols = [MDCTabBarIndicatorTemplate];
+    try {
+        BackgroundIndicatorTemplate.ObjCProtocols = [MDCTabBarIndicatorTemplate];
+    } catch(ex) {
+
+    }
     return BackgroundIndicatorTemplate;
 }(NSObject));
 var UIPageViewControllerImpl = /** @class */ (function (_super) {
